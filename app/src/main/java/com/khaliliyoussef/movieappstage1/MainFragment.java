@@ -55,6 +55,7 @@ public class MainFragment extends Fragment implements AsyncTaskCompleteListener,
         {
             new MovieAsyncTask(this,topRated).execute();
         }
+
         return true;
     }
 
@@ -71,7 +72,6 @@ public class MainFragment extends Fragment implements AsyncTaskCompleteListener,
 
     @Override
     public void onListItemClick(int clickedItemIndex) {
-//        startActivity(new Intent(getActivity(),DetailsActivity.class));
         Intent intent = new Intent(getActivity(),DetailsActivity.class);
         intent.putExtra(Intent.EXTRA_TEXT,movies.get(clickedItemIndex));
         startActivity(intent);

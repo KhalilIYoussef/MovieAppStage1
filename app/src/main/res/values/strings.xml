@@ -1,12 +1,10 @@
 <resources>
-    <string name="app_name">Movie</string>
+    <string name="app_name">Movie App S1</string>
 
     <string name="most_popular">Most Popular</string>
     <string name="top_rated">Top Rated</string>
-    <string name="test">Test</string>
     <string name="favorite">Favorite</string>
     <string name="reviews">Reviews</string>
-    <string name="trailers">Trailers</string>
-    <string name="Trailer">Trailer</string>
+
     <string name="title_activity_details">DetailsActivity</string>
 </resources>
