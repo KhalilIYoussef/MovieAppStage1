@@ -26,8 +26,8 @@ import java.util.List;
 
 public class MainFragment extends Fragment implements AsyncTaskCompleteListener,HomeRecyclerViewAdapter.ListItemClickListener {
 
-    String popular ="http://api.themoviedb.org/3/movie/popular?api_key=d47bb209ca59541c9a2a46c99ccdd528";
-    String topRated ="http://api.themoviedb.org/3/movie/top_rated?api_key=d47bb209ca59541c9a2a46c99ccdd528";
+    String popular ="http://api.themoviedb.org/3/movie/popular?api_key=";
+    String topRated ="http://api.themoviedb.org/3/movie/top_rated?api_key=";
     List<Movie> movies;
     RecyclerView recyclerView;
     @Nullable
