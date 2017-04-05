@@ -1,34 +1,33 @@
-package com.khaliliyoussef.movieappstage1.utilities;
-
+package com.khaliliyoussef.movieappstage1.controler;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import com.khaliliyoussef.movieappstage1.interfaces.AsyncTaskCompleteListener;
-
 import org.json.JSONException;
-
 import java.net.URL;
 
 
-public class MovieAsyncTask extends AsyncTask<Void,Void,String> {
+public class MovieAsyncTask extends AsyncTask<String,Void,String> {
 
     private AsyncTaskCompleteListener callback;
-    private String url;
 
-    public MovieAsyncTask(AsyncTaskCompleteListener callback, String url) {
+    public MovieAsyncTask(AsyncTaskCompleteListener callback)
+    {
         this.callback = callback;
-        this.url = url;
+
     }
 
     @Override
-    protected String doInBackground(Void... voids) {
-        String movieJSN=null;
-        if(url!=null)
+    protected String doInBackground(String... urls)
+    {
+
+        if(urls!=null)
         {
             try {
-                Uri uri = Uri.parse(url).buildUpon().build();
+                Uri uri = Uri.parse(urls[0]).buildUpon().build();
                 return NetworkUtils.getResponseFromHttpUrl(new URL(uri.toString()));
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 e.printStackTrace();
             }
         }
@@ -36,11 +35,16 @@ public class MovieAsyncTask extends AsyncTask<Void,Void,String> {
     }
 
     @Override
-    protected void onPostExecute(String s) {
+    protected void onPostExecute(String s)
+    {
         try {
 	    if(s != null)
+	    {
             callback.onTaskComplete(s);
-        } catch (JSONException e) {
+        }
+        }
+        catch (JSONException e)
+        {
             e.printStackTrace();
         }
 

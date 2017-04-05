@@ -3,8 +3,6 @@
 
     <string name="most_popular">Most Popular</string>
     <string name="top_rated">Top Rated</string>
-    <string name="favorite">Favorite</string>
     <string name="reviews">Reviews</string>
 
-    <string name="title_activity_details">DetailsActivity</string>
 </resources>
