@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-public class Movie implements Parcelable{
+public class Movie implements Parcelable {
 
     private Boolean mAdult;
     private String mBackdropPath;

@@ -2,6 +2,8 @@ package com.khaliliyoussef.movieappstage1.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,6 +16,8 @@ import com.khaliliyoussef.movieappstage1.controler.MovieAsyncTask;
 import com.khaliliyoussef.movieappstage1.controler.MovieJsonUtils;
 import com.khaliliyoussef.movieappstage1.controler.RecyclerViewAdapter;
 import org.json.JSONException;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AsyncTaskCompleteListener,RecyclerViewAdapter.ListItemClickListener{
@@ -26,9 +30,19 @@ public class MainActivity extends AppCompatActivity implements AsyncTaskComplete
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         recyclerView = (RecyclerView) findViewById(R.id.rv_main);
         new MovieAsyncTask(this).execute(popular);
 
+
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+
+outState.putParcelableArrayList("myMovie", (ArrayList<? extends Parcelable>) movies);
 
     }
 
