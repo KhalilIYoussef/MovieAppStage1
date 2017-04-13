@@ -10,11 +10,9 @@ import com.khaliliyoussef.movieappstage1.model.Movie;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
-
-
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MovieViewHolder>
 {
-//TODO list of type you wanna pass
+        //TODO list of type you wanna pass
     private List<Movie> movieList;
     //the context
     private Context context;
